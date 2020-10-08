@@ -1,5 +1,7 @@
 class SchedulesController < ApplicationController
     
+    before_action :set_schedule, only: [:show, :edit, :update, :destroy]
+    
     def index
         @schedules = Schedule.all
     end
@@ -43,7 +45,7 @@ class SchedulesController < ApplicationController
     private
     
     def set_schedule
-        @schedule = Schedul.find(params[:id])
+        @schedule = Schedule.find(params[:id])
     end
     
 end
