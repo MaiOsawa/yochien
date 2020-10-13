@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
  
     resources :schedules 
-    resources :sessions
-    resources :user
+    get "signup", to: "session#new"
+    post "signup", to: "session#create"
 
 end
