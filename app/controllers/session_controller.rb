@@ -11,5 +11,6 @@ class SessionController < ApplicationController
         else
             flash[:aleart] = "ログインに失敗しました"
             render "new"
+        end
     end
 end
