@@ -13,4 +13,15 @@ class SessionController < ApplicationController
             render "new"
         end
     end
+    
+    def destroy
+        session[:user_id] = nil
+        redirect_to signin_path
+    end
+    
+    private
+    
+    def redirect_to 
+    end
+    
 end
