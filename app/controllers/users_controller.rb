@@ -18,4 +18,19 @@ class UsersController < ApplicationController
         end
     end
     
+    def edit
+        @user = User.find(session[:user_id])
+    end
+    
+    def update
+        @user = User.find(session[:user_id])
+        user_params = params.require(:user).permit(:name, :email)
+        if @user.update(user_params)
+            flash[:notice] = "更新しました"
+            redirect_to edit_user_path
+        else
+            flash[:alert] = "更新に失敗しました"
+            render "edit"
+        end
+    end
 end
