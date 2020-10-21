@@ -1,6 +1,6 @@
 class SessionController < ApplicationController
     
-    before_action :redirect_to_schedules
+    before_action :redirect_to_schedules, only: [:new, :create]
 
     def new
     end
