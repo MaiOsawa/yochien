@@ -1,6 +1,7 @@
 class SchedulesController < ApplicationController
     
     before_action :set_schedule, only: [:show, :edit, :update, :destroy]
+    before_action :redirect_to_schedules, only: [:new, :create]
     
     def index
         @schedules = Schedule.all
@@ -46,6 +47,10 @@ class SchedulesController < ApplicationController
     
     def set_schedule
         @schedule = Schedule.find(params[:id])
+    end
+    
+    def redirect_to_schedules
+        redirect_to schedule_path if session[:user_id].blank?
     end
     
 end
