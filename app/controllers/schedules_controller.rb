@@ -12,7 +12,7 @@ class SchedulesController < ApplicationController
     end
     
     def create
-        schedule_params = params.require(:schedule).permit(:year, :month, :day, :place)
+        schedule_params[:user_id] = session[:user_id]
         @schedule = Schedule.new(schedule_params)
         if @schedule.save
             flash[:notice] = "予定を1件登録しました！"
@@ -46,7 +46,7 @@ class SchedulesController < ApplicationController
     private
     
     def set_schedule
-        @schedule = Schedule.find(params[:id])
+        @schedule = Schedule.where(user_id: session[:user_id]).find(params[:id])
     end
     
     def redirect_to_schedules

@@ -1,1 +1,2 @@
-<%= render partial: "form", locals: { type: "編集", schedule: @schedule, method: "patch" } %>
+<h1>会員情報更新</h1>
+<%= form_with model: @user, url: user_path, method: "patch", local: true do |f| %>
