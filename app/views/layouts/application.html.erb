@@ -12,10 +12,10 @@
 
   <body>
     <nav class="navbar navbar-light bg-light">
-      <div class="navbar-brand">幼稚園ノート</div>
+      <a href="" class="navbar-brand">幼稚園ノート</a>
       <div>
         <% if session[:user_id].present? %>
-          <%= link_to "会員情報の更新", user_edit_path, class: "btn btn-outline-info" %>
+          <%= link_to "会員情報の更新", edit_user_path, class: "btn btn-outline-info" %>
           <%= link_to "ログアウト", signout_path, class: "btn btn-outline-secondary" %>
         <% else %>
           <%= link_to "会員登録", signup_path, class: "btn btn-outline-primary" %>
