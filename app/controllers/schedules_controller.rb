@@ -12,6 +12,7 @@ class SchedulesController < ApplicationController
     end
     
     def create
+        schedule_params = params.require(:schedule).permit(:year, :month, :day, :place)
         schedule_params[:user_id] = session[:user_id]
         @schedule = Schedule.new(schedule_params)
         if @schedule.save
