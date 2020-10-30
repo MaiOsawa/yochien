@@ -1,7 +1,7 @@
-class SessionController < ApplicationController
+class SessionController < UserController
     
-    before_action :redirect_to_schedules, only: [:new, :create]
-
+    before_action :check_loggedin, only: [:destroy]
+    
     def new
     end
     
@@ -23,9 +23,5 @@ class SessionController < ApplicationController
     end
     
     private
-    
-    def redirect_to_schedules
-        redirect_to schedules_path if session[:user_id].present?
-    end
     
 end

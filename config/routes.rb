@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
     
-    root to: "schedules#index"
+    root to: "session#new"
  
     resources :schedules 
     

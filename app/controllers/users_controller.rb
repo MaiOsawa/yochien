@@ -1,6 +1,6 @@
-class UsersController < ApplicationController
+class UsersController < UserController
     
-    before_action :redirect_to_signin, only: [:edit, :update]
+    before_action :check_loggedin, only: [:edit, :update]
     
     def new
         @user = User.new
