@@ -10,8 +10,8 @@
   </head>
 
   <body>
-     <nav>
-        <p><a href=""><img src="/assets/logo.png" alt="幼稚園ノート"></a></p>
+     <nav class="navbar navbar-light">
+        <p><img src="/assets/logo.png" alt="幼稚園ノート"></a></p>
         <div class="btn">
           <% if session[:user_id].present? %>
             <%= link_to "会員情報の更新", edit_user_path, class: "btn btn-outline-info" %>
