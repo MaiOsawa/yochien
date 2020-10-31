@@ -3,7 +3,8 @@ class SchedulesController < UserController
     before_action :set_schedule, only: [:show, :edit, :update, :destroy]
 
     def index
-        @schedules = Schedule.all
+        @schedules = Schedule.where(user_id: session[:user_id])
+
     end
     
     def new
