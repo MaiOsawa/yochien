@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <div class="container">
      <nav class="navbar navbar-light">
         <p><img src="/assets/logo.png" alt="幼稚園ノート"></a></p>
         <div class="btn">
@@ -21,7 +22,6 @@
           <% end %>
         </div>
       </nav>
-      <div class="container">
         <% if flash[:notice] %>
         <div class="alert alert-success" role="alert">
           <%= flash[:notice] %>
@@ -34,7 +34,7 @@
         </div>
         <% end %>
         <%= yield %>
-      </div>
+    </div>
       
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

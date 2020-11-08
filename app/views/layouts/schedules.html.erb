@@ -1,24 +1,40 @@
 <html>
   <head>
     <title>Yochien</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar navbar-light">
-      <h1><img src="/assets/logo.png" alt="幼稚園ノート"></h1>
-      <%= link_to "会員情報の更新", edit_user_path, class: "btn btn-outline-info" %>
-      <%= link_to "ログアウト", signout_path, class: "btn btn-outline-secondary" %>
-    </nav>
-    <h2>予定一覧</h2>
-    <div class="schedule">
+    <div class="container">
+      <nav class="navbar navbar-light">
+        <h1><img src="/assets/logo.png" alt="幼稚園ノート"></h1>
+        <%= link_to "会員情報の更新", edit_user_path, class: "btn btn-outline-info" %>
+        <%= link_to "ログアウト", signout_path, class: "btn btn-outline-secondary" %>
+      </nav>
+      <h2>予定一覧</h2>
+      <div class="schedule">
+         <% @schedules.each do |schedule| %>
+           <tr>
+               <td><%= schedule.year %>年</td>
+               <td><%= schedule.month %>月</td>
+               <td><%= schedule.day %>日</td>
+               <td><%= schedule.place %></td>
+               <td>
+                   <%= link_to "詳細", schedule_path(schedule), class: "btn btn-info" %>
+                   <%= link_to "編集", edit_schedule_path(schedule), class: "btn btn-warning" %>
+                   <%= link_to "削除", schedule_path(schedule), method: "delete", data: { confirm: '本当に削除しますか？' }, class: "btn btn-danger" %>
+               </td>
+           </tr>
+         <% end %>
+      </div>
+      <%= link_to "予定の追加", new_schedule_path, class: "btn btn-success" %>
+      <form method="get" action="#" class="search_container">
+        <input type="text" size="25" placeholder="キーワード検索">
+        <input type="submit" value="&#xf002">
+      </form>      
+      <a href="#">自分の記録一覧</a>
+      <a href="#">＋新しい情報を登録</a>
     </div>
-    <%= link_to "予定の追加", new_schedule_path, class: "btn btn-success" %>
-    <form method="get" action="#" class="search_container">
-      <input type="text" size="25" placeholder="キーワード検索">
-      <input type="submit" value="&#xf002">
-    </form>      
-    <a href="#">自分の記録一覧</a>
-    <a href="#">＋新しい情報を登録</a>
   </body>
 </html>
