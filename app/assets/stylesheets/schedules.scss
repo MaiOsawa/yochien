@@ -10,32 +10,27 @@ div.schedule {
            background-color: white;
         }
 
-.search_container {
-        input[type="text"] {
-            border: 1px solid #999;
-            padding: 3px 10px;
-            border-radius: 3px;
-            height: 3em;
-            overflow: hidden;
-        }
-        input[type="text"]:focus {
-            outline: 0;
-            height: 3em;
-        }
-        input[type="submit"]{
-            cursor: pointer;
-            font-family: FontAwesome;
-            font-size: 1.2em;
-            border: none;
-            background: #3879D9;
-            border: 1px solid #3879D9;
-            border-radius: 3px;
-            color: #fff;
-            outline : none;
-            width: 3.5em;
-            height: 2em;
-            display: inline-block;
-            vertical-align: middle;
-        }
-}
+#form2{
+    width: 100%;	
+    margin-bottom: 20px;
+    }
     
+#sbox2{
+    height: 50px;
+    padding: 0 10px; 
+    outline: 0;
+    border: none;
+    background: white;
+    }
+    
+#sbtn2{
+    height: 50px;
+    background: none;
+    color: #666;
+    border: none;
+    font-size: 25px;/*アイコンサイズ*/
+    }
+    
+#sbtn5:hover{
+    color:#7fbfff;
+    }

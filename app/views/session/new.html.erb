@@ -1,5 +1,3 @@
-<h1>ログイン</h1>
-
 <%= form_with url: signin_path, local: true do |f| %>
 
     <div class="form-group">
@@ -12,6 +10,11 @@
         <%= f.password_field :password, class: "form-control" %>
     </div>
 
-    <%= f.submit "ログイン", class: "btn btn-primary"%>
+    <div class="loginBtn">
+        <%= f.submit "ログイン", class: "btn btn-primary"%>
+    </div>
+    
+    <div><%= link_to "パスワードを忘れてしまった方はこちら", "#" %></div>
+    <div><%= link_to "新規会員登録はこちら", signup_path %></div>
 
 <% end %>
