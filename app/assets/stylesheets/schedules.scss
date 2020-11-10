@@ -10,27 +10,37 @@ div.schedule {
            background-color: white;
         }
 
-#form2{
-    width: 100%;	
-    margin-bottom: 20px;
+.pinkBtn {
+    background-color: #ffa0c8;
+    width: 50%;
+    height: 80px;
+}
+
+.search_container {
+    box-sizing: border-box;
+    
+    input[type="text"] {
+        border: none;
+        padding: 3px 5px;
+        height: 3.0em;
+        width: 95%;
+        overflow: hidden;
     }
     
-#sbox2{
-    height: 50px;
-    padding: 0 10px; 
-    outline: 0;
-    border: none;
-    background: white;
+    input[type="text"]:focus {
+        outline: 0;
     }
     
-#sbtn2{
-    height: 50px;
-    background: none;
-    color: #666;
-    border: none;
-    font-size: 25px;/*アイコンサイズ*/
+    input[type="submit"] {
+        cursor: pointer;
+        font-family: FontAwesome;
+        font-size: 2.0em;
+        border: none;
+        background: none;
+        color: #737373;
+        outline : none;
+        display: inline-block;
+        vertical-align: middle;
     }
-    
-#sbtn5:hover{
-    color:#7fbfff;
-    }
+
+}

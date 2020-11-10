@@ -1,0 +1,36 @@
+body {
+  background-color: #ffd9e9; }
+
+h2 {
+  text-align: center; }
+
+div.schedule {
+  background-color: white; }
+
+.pinkbtn {
+  background-color: #ffa0c8;
+  width: 50%;
+  height: 80px; }
+
+.search_container {
+  box-sizing: border-box; }
+  .search_container input[type="text"] {
+    border: none;
+    padding: 3px 5px;
+    height: 3.0em;
+    width: 95%;
+    overflow: hidden; }
+  .search_container input[type="text"]:focus {
+    outline: 0; }
+  .search_container input[type="submit"] {
+    cursor: pointer;
+    font-family: FontAwesome;
+    font-size: 2.0em;
+    border: none;
+    background: none;
+    color: #737373;
+    outline: none;
+    display: inline-block;
+    vertical-align: middle; }
+
+/*# sourceMappingURL=schedules.css.map */
