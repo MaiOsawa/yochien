@@ -15,7 +15,7 @@
         </div>
       </nav>
       <h2>予定一覧</h2>
-      <div class="schedule">
+      <div class="plans">
          <% @schedules.each do |schedule| %>
            <tr>
                <td><%= schedule.year %>年</td>
@@ -35,11 +35,13 @@
         <input type="text" size="25" placeholder="幼稚園情報の検索">
         <input type="submit" value="&#xf002">
       </form>
-      <div class="pinkBtn">
-        <a href="#">自分の記録一覧</a>
-      </div>
-      <div class="pinkBtn">
-        <a href="#">＋新しい情報を登録</a>
+      <div class="buttons">
+        <div class="pinkBtn leftbtn">
+          <a href="#">自分の記録一覧</a>
+        </div>
+        <div class="pinkBtn">
+          <a href="#">＋新しい情報を登録</a>
+        </div>
       </div>
     </div>
   </body>

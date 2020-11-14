@@ -6,14 +6,30 @@ h2 {
     text-align: center;
     }
 
-div.schedule {
+div.plans {
            background-color: white;
         }
+
+.buttons {
+    display: flex;
+}
 
 .pinkBtn {
     background-color: #ffa0c8;
     width: 50%;
     height: 80px;
+}
+
+.pinkBtn a {
+    display: block;
+    text-align: center;
+    font-size: 2em;
+    color: white;
+    padding-top: 18px;
+}
+
+.leftbtn {
+    margin-right: 5px;
 }
 
 .search_container {
