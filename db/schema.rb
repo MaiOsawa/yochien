@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_21_143743) do
+ActiveRecord::Schema.define(version: 2020_11_17_143523) do
+
+  create_table "my_facilities", force: :cascade do |t|
+    t.string "name"
+    t.string "tel"
+    t.string "address"
+    t.boolean "lunch"
+    t.boolean "pre"
+    t.string "memo"
+    t.string "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "schedules", force: :cascade do |t|
     t.integer "year"

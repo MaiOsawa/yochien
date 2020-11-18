@@ -1,0 +1,2 @@
+class MyFacility < ApplicationRecord
+end

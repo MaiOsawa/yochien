@@ -1,28 +1,33 @@
-<h1>スケジュール</h1>
-<%= link_to "+新規", new_schedule_path, class: "btn btn-success" %>
-<table class="table table-striped">
+<h2>予定一覧</h2>
+<div class="plans">
+    <% @schedules.each do |schedule| %>
     <tr>
-        <th>年</th>
-        <th>月</th>
-        <th>日</th>
-        <th>場所</th>
-        <th></th>
+        <td><%= schedule.year %>年</td>
+        <td><%= schedule.month %>月</td>
+        <td><%= schedule.day %>日</td>
+        <td><%= schedule.place %></td>
+        <td>
+            <%= link_to "詳細", schedule_path(schedule), class: "btn btn-info" %>
+            <%= link_to "編集", edit_schedule_path(schedule), class: "btn btn-warning" %>
+            <%= link_to "削除", schedule_path(schedule), method: "delete", data: { confirm: '本当に削除しますか？' }, class: "btn btn-danger" %>
+        </td>
     </tr>
- 
- <% @schedules.each do |schedule| %>
- 
-     <tr>
-         <td><%= schedule.year %>年</td>
-         <td><%= schedule.month %>月</td>
-         <td><%= schedule.day %>日</td>
-         <td><%= schedule.place %></td>
-         <td>
-             <%= link_to "詳細", schedule_path(schedule), class: "btn btn-info" %>
-             <%= link_to "編集", edit_schedule_path(schedule), class: "btn btn-warning" %>
-             <%= link_to "削除", schedule_path(schedule), method: "delete", data: { confirm: '本当に削除しますか？' }, class: "btn btn-danger" %>
-         </td>
-     </tr>
-     
- <% end %>
+    
+    <% end %>
+</div>
 
-</table>
+<%= link_to "＋予定の追加", new_schedule_path, class: "" %>
+
+<form method="get" action="#" class="search_container">
+    <input type="text" size="25" placeholder="幼稚園情報の検索">
+    <input type="submit" value="&#xf002">
+</form>
+<div class="buttons">
+    <div class="pinkBtn leftbtn">
+        <%= link_to "自分の記録一覧", class: "" %>
+    </div>
+    <div class="pinkBtn">
+        <a href="#">＋新しい情報を登録</a>
+    </div>
+</div>
+      
