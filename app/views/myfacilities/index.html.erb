@@ -1,0 +1,26 @@
+<h1>幼稚園情報</h1>
+
+<table>
+    <tr>
+        <th>場所</th>
+        <th>電話番号</th>
+        <th>住所</th>
+        <th>給食の有無</th>
+        <th>プレの有無</th>
+        <th>フリーメモ</th>
+    </tr>
+    
+    <% @myfacilities.each do |myfacility| %>
+    
+    <tr>
+        <td><%= myfacility.name %></td>
+        <td><%= myfacility.tel %></td>
+        <td><%= myfacility.address %></td>
+        <td><%= myfacility.lunch %></td>
+        <td><%= myfacility.pre %></td>
+        <td><%= myfacility.memo %></td>
+    </tr>
+    
+    <% end %>
+
+</table>

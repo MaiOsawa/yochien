@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  tel: MyString
-  address: MyString
+  name: 1
+  tel: 1
+  address: 1
   lunch: false
   pre: false
-  memo: MyString
+  memo: 1
   user_id: MyString
 
 two:
-  name: MyString
-  tel: MyString
-  address: MyString
+  name: 1
+  tel: 1
+  address: 1
   lunch: false
   pre: false
-  memo: MyString
+  memo: 1
   user_id: MyString
