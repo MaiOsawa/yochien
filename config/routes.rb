@@ -12,5 +12,8 @@ Rails.application.routes.draw do
     post "signin", to: "session#create"
     get "signout", to: "session#destroy"
     get "/facilities", to: "facilities#index"
-
+    get "/facilities/new", to: "facilities#new", as: "new_facility"
+    get "/facilities/:id/edit", to: "facilities#edit", as: "edit_facility"
+    get "/facilities/:id", to: "facilities#show", as: "facility"
+    
 end
