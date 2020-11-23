@@ -1,4 +1,4 @@
-class FacilitiesController < ApplicationController
+class MyFacilitiesController < ApplicationController
 
     def index
         @facilities = Facility.all
@@ -16,7 +16,7 @@ class FacilitiesController < ApplicationController
         facility_params = params.require(:facility).permit(:name, :address, :tel, :lunch, :pre, :memo)
         @facility = Facility.new(facility_params)
         if @facility.save
-            redirect_to facilities_path
+            redirect_to my_facilities_path
         else
             render :new
         end
