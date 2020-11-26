@@ -5,6 +5,6 @@ class Facility < ApplicationRecord
    validates :tel, presence: true 
    validates :lunch, presence: true 
    validates :pre, presence: true 
-   validates :memo, presence: true 
+   validates :memo
    
 end

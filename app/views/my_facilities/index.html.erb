@@ -11,6 +11,8 @@
         <td><%= facility.name %></td>
         <td>
             <%= link_to "詳細", my_facility_path(my_facility), class: "btn btn-info" %>
+            <%= link_to "編集", edit_facility_path(my_facility), class: "btn btn-info" %>
+            <%= link_to "削除", my_facility_path(my_facility), method: "delete", class: "btn btn-danger" %>
         </td>
     </tr>
     
