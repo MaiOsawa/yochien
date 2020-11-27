@@ -1,10 +1,9 @@
 class Facility < ApplicationRecord
     
-   validates :name, presence: true 
-   validates :address, presence: true 
-   validates :tel, presence: true 
-   validates :lunch, presence: true 
-   validates :pre, presence: true 
-   validates :memo
-   
+    validates :name, presence: true
+    validates :address, presence: true
+    validates :tel, presence: true
+    validates :lunch, inclusion: {in: [true, false]}
+    validates :pre, inclusion: {in: [true, false]}
+    
 end

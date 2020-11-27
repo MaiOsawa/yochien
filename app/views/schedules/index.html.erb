@@ -7,21 +7,23 @@
         <td><%= schedule.day %>日</td>
         <td><%= schedule.place %></td>
         <td class="scheduleButtons">
-            <%= link_to "詳細", schedule_path(schedule), class: "btn btn-info" %>
-            <%= link_to "編集", edit_schedule_path(schedule), class: "btn btn-warning" %>
-            <%= link_to "削除", schedule_path(schedule), method: "delete", data: { confirm: '本当に削除しますか？' }, class: "btn btn-danger" %>
+            <%= link_to "編集", edit_schedule_path(schedule), class: "btn" %>
+            <%= link_to "削除", schedule_path(schedule), method: "delete", data: { confirm: '本当に削除しますか？' }, class: "btn" %>
         </td>
     </tr>
     
     <% end %>
 </div>
 
-<%= link_to "＋予定の追加", new_schedule_path, class: "btn btn-primary" %>
+<div class="rightBtn">
+    <%= link_to "＋予定の追加", new_schedule_path, class: "btn btn-primary" %>
+</div>
 
 <form method="get" action="#" class="search_container">
     <input type="text" size="25" placeholder="幼稚園情報の検索">
     <input type="submit" value="&#xf002">
 </form>
+
 <div class="buttons">
     <div class="pinkBtn leftbtn">
         <%= link_to "自分の記録一覧", my_facilities_path, class: "" %>

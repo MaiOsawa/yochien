@@ -1,11 +1,8 @@
-.form-group {
+.form-group, .form-control, .loginBtn, .center {
     text-align: center;
 }
 
-.form-control {
-    text-align: center;
-}
-
-.loginBtn {
-    text-align: center;
+.center {
+    margin-top: 10px;
+    font-size: 0.8em;
 }

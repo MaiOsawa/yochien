@@ -1,23 +1,17 @@
 <h1>幼稚園情報一覧</h1>
-<table class="table table-striped">
-    <tr>
-        <th>名称</th>
-        <th>詳細</th>
-    </tr>
-    
+<table class="table table-borderless">
     <% @facilities.each do |facility| %>
-    
     <tr>
         <td><%= facility.name %></td>
         <td>
-            <%= link_to "詳細", my_facility_path(my_facility), class: "btn btn-info" %>
-            <%= link_to "編集", edit_facility_path(my_facility), class: "btn btn-info" %>
-            <%= link_to "削除", my_facility_path(my_facility), method: "delete", class: "btn btn-danger" %>
+            <%= link_to "詳細",my_facility_path(facility), class: "btn facilityBtn" %>
+            <%= link_to "編集", edit_my_facility_path(facility), class: "btn facilityBtn" %>
+            <%= link_to "削除", my_facility_path(facility), method: "delete", data: { confirm: '本当に削除しますか？' }, class: "btn facilityBtn" %>
         </td>
     </tr>
-    
     <% end %>
-
 </table>
 
-<%= link_to "戻る", schedules_path, class: "btn btn-primary" %>
+<div class="rightBtn">
+    <%= link_to "戻る", my_facilities_path, class: "btn btn-primary" %>
+</div>
