@@ -4,6 +4,7 @@ Rails.application.routes.draw do
  
     resources :schedules
     resources :my_facilities
+    resources :facilities
 
     get "signup", to: "users#new"
     post "signup", to: "users#create"

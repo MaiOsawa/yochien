@@ -3,7 +3,7 @@ class MyFacilitiesController < ApplicationController
     before_action :set_facility, only: [:show, :edit, :update, :destroy]
 
     def index
-        @facilities = Facility.all
+        @facilities = Facility.where(user_id: session[:user_id])
     end
     
     def show
@@ -15,6 +15,7 @@ class MyFacilitiesController < ApplicationController
     
     def create
         facility_params = params.require(:facility).permit(:name, :address, :tel, :lunch, :pre, :memo)
+        facility_params[:user_id] = session[:user_id]
         @facility = Facility.new(facility_params)
         if @facility.save
             flash[:notice] = "データを１件登録しました"
@@ -47,7 +48,7 @@ class MyFacilitiesController < ApplicationController
     end
 
     def set_facility
-        @facility = Facility.find(params[:id])
+        @facility = Facility.where(user_id: session[:user_id]).find(params[:id])
     end
 
 end

@@ -1,0 +1,10 @@
+<h1>幼稚園情報</h1>
+<table class="table table-borderless">
+    <% @facilities.each do |facility| %>
+    <tr>
+        <td>
+            <%= link_to facility.name, facility_path(facility), class: "btn" %>
+        </td>
+    </tr>
+    <% end %>
+</table>
