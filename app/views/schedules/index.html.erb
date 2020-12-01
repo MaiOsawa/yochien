@@ -1,17 +1,11 @@
 <h2>予定一覧</h2>
 <div class="plans">
     <% @schedules.each do |schedule| %>
-    <tr>
-        <td><%= schedule.year %>年</td>
-        <td><%= schedule.month %>月</td>
-        <td><%= schedule.day %>日</td>
-        <td><%= schedule.place %></td>
-        <td class="scheduleButtons">
-            <%= link_to "編集", edit_schedule_path(schedule), class: "btn" %>
-            <%= link_to "削除", schedule_path(schedule), method: "delete", data: { confirm: '本当に削除しますか？' }, class: "btn" %>
-        </td>
-    </tr>
-    
+        <div>
+            <%= schedule.year %>年 <%= schedule.month %>月 <%= schedule.day %>日 <%= schedule.place %>
+            <%= link_to "編集", edit_schedule_path(schedule), class: "btn scheduleButtons" %>
+            <%= link_to "削除", schedule_path(schedule), method: "delete", data: { confirm: '本当に削除しますか？' }, class: "btn scheduleButtons" %>
+        </div>
     <% end %>
 </div>
 
