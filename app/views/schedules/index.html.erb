@@ -1,17 +1,15 @@
 <h2>予定一覧</h2>
 <div class="plans">
     <% @schedules.each do |schedule| %>
-    <tr>
-        <td><%= schedule.year %>年</td>
-        <td><%= schedule.month %>月</td>
-        <td><%= schedule.day %>日</td>
-        <td><%= schedule.place %></td>
-        <td class="scheduleButtons">
-            <%= link_to "編集", edit_schedule_path(schedule), class: "btn" %>
-            <%= link_to "削除", schedule_path(schedule), method: "delete", data: { confirm: '本当に削除しますか？' }, class: "btn" %>
-        </td>
-    </tr>
-    
+    <table>
+        <tr>
+            <td>
+                <%= schedule.year %>年<%= schedule.month %>月<%= schedule.day %>日<%= schedule.place %>
+                <%= link_to "編集", edit_schedule_path(schedule), class: "btn scheduleButtons" %>
+                <%= link_to "削除", schedule_path(schedule), method: "delete", data: { confirm: '本当に削除しますか？' }, class: "btn scheduleButtons btn-primary" %>
+            </td>
+        </tr>
+    </table>
     <% end %>
 </div>
 
@@ -19,10 +17,20 @@
     <%= link_to "＋予定の追加", new_schedule_path, class: "btn btn-primary" %>
 </div>
 
-<form method="get" action="#" class="search_container">
-    <input type="text" size="25" placeholder="幼稚園情報の検索">
-    <input type="submit" value="&#xf002">
-</form>
+<div class="card">
+    <div class="card-body">
+        <%= form_with method: "get", url: facilities_path, local: true do |f| %>
+            <div class="form-row">
+                <div class="col col1">
+                    <%= f.text_field "name", placeholder: "幼稚園情報の検索", class: "formcontrol" %>
+                </div>    
+                <div class="col">
+                    <%= f.submit "検索", class: "btn btn-primary" %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
 
 <div class="buttons">
     <div class="pinkBtn leftbtn">
