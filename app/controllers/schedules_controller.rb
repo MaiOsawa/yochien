@@ -26,7 +26,7 @@ class SchedulesController < UserController
         else
             flash.now[:alert] = "登録に失敗しました。"
             render :new
-        end
+        end 
     end
 
     def edit
