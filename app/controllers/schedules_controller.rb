@@ -3,7 +3,8 @@ class SchedulesController < UserController
     before_action :set_schedule, only: [:show, :edit, :update, :destroy]
 
     def index
-        @schedules = Schedule.where(user_id: session[:user_id]).order(:datetime)
+        @schedules = Schedule.where(user_id: session[:user_id])
+        @schedules = Schedule.order(date: :asc)
     end
     
     def show
@@ -18,6 +19,7 @@ class SchedulesController < UserController
         schedule_params = params.require(:schedule).permit(:year, :month, :day, :place)
         schedule_params[:user_id] = session[:user_id]
         @schedule = Schedule.new(schedule_params)
+        @schedule.date = DateTime.parse("#{@schedule.year}/#{@schedule.month}/#{@schedule.day}")
         if @schedule.save
             flash[:notice] = "予定を1件登録しました！"
             redirect_to schedules_path
@@ -44,7 +46,7 @@ class SchedulesController < UserController
     
     def destroy
         @schedule.destroy
-        redirect_to schedule_path
+        redirect_to schedules_path
     end
     
     private
