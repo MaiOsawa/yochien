@@ -1,6 +1,8 @@
 class Facility < ApplicationRecord
     
     belongs_to :user
+    has_many :facility_users
+    has_many :users, through: :facility_users
 
     validates :name, presence: true
     validates :address, presence: true
