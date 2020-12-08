@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :schedules
     resources :my_facilities
     resources :facilities
+    resources :my_lists
 
     get "signup", to: "users#new"
     post "signup", to: "users#create"

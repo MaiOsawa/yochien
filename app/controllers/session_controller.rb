@@ -22,6 +22,4 @@ class SessionController < UserController
         redirect_to signin_path
     end
     
-    private
-    
 end
