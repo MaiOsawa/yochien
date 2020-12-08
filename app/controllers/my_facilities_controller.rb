@@ -3,7 +3,9 @@ class MyFacilitiesController < ApplicationController
     before_action :set_facility, only: [:show, :edit, :update, :destroy]
 
     def index
-        @facilities = Facility.where(user_id: session[:user_id])
+        @user = User.find(session[:user_id])
+        @myfacilities = @user.my_facilities #他人が登録したぶん
+        @facilities = @user.facilities #自分が登録したぶん
     end
     
     def show

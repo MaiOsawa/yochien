@@ -10,6 +10,16 @@
         </td>
     </tr>
     <% end %>
+    <% @myfacilities.each do |my_facility| %>
+    <tr>
+        <td><%= my_facility.name %></td>
+        <td>
+            <%= link_to "詳細",my_facility_path(my_facility), class: "btn facilityBtn" %>
+            <%= link_to "編集", edit_my_facility_path(my_facility), class: "btn facilityBtn" %>
+            <%= link_to "削除", my_facility_path(my_facility), method: "delete", data: { confirm: '本当に削除しますか？' }, class: "btn facilityBtn" %>
+        </td>
+    </tr>
+    <% end %>
 </table>
 
 <div class="rightBtn">
