@@ -39,7 +39,7 @@ class SchedulesController < UserController
             redirect_to schedules_path
         else 
             flash[:alert] = "予定の更新に失敗しました。"
-        　　render :edit
+            render :edit
         end
 
     end
