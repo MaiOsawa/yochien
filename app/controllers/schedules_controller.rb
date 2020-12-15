@@ -16,7 +16,7 @@ class SchedulesController < UserController
     end
     
     def create
-        schedule_params = params.require(:schedule).permit(:year, :month, :day, :place)
+        schedule_params = params.require(:schedule).permit(:date, :place)
         schedule_params[:user_id] = session[:user_id]
         @schedule = Schedule.new(schedule_params)
         @schedule.date = DateTime.parse("#{@schedule.year}/#{@schedule.month}/#{@schedule.day}")
@@ -33,7 +33,7 @@ class SchedulesController < UserController
     end
     
     def update
-        schedule_params = params.require(:schedule).permit(:year, :month, :day, :place)
+        schedule_params = params.require(:schedule).permit(:date, :place)
         if @schedule.update(schedule_params)
             flash[:notice] = "予定を更新しました！"
             redirect_to schedules_path

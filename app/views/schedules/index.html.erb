@@ -3,7 +3,7 @@
     <div class="plans">
         <% @schedules.each do |schedule| %>
             <div class="schedules">
-                <%= schedule.date %><%= schedule.place%>
+                <%= schedule.date.to_date %> <%= schedule.place %>
                 <%= link_to "編集", edit_schedule_path(schedule), class: "btn btn-primary" %>
                 <%= link_to "削除", schedule_path(schedule), method: "delete", data: { confirm: '本当に削除しますか？' }, class: "btn btn-primary" %>
             </div>
